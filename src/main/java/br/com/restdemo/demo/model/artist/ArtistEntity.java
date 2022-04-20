@@ -1,17 +1,22 @@
-package br.com.restdemo.demo.controller.artist.model.response;
+package br.com.restdemo.demo.model.artist;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Id;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class ArtistControllerResponse {
-    private String name;
+@Document
+public class ArtistEntity {
+    @Id
     private String id;
+    private String name;
     private String link;
     private String share;
     private String picture;

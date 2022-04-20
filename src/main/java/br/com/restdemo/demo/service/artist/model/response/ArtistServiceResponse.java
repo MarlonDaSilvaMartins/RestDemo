@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.controller.artist.model.response;
+package br.com.restdemo.demo.service.artist.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class ArtistControllerResponse {
+public class ArtistServiceResponse {
     private String name;
     private String id;
     private String link;

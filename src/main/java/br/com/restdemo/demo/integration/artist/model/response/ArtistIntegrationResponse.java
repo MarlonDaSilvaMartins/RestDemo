@@ -11,18 +11,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class ArtistIntegrationResponse {
-    public String id;
-    public String name;
-    public String link;
-    public String share;
-    public String picture;
-    public String picture_small;
-    public String picture_medium;
-    public String picture_big;
-    public String picture_xl;
-    public int nb_album;
-    public int nb_fan;
-    public boolean radio;
-    public String tracklist;
-    public String type;
+    private String name;
+    private String id;
+    private String link;
+    private String share;
+    private String picture;
+    private Integer nb_album;
+    private Integer nb_fan;
+    private String tracklist;
+    private String type;
 }
