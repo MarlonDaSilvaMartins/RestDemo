@@ -20,7 +20,7 @@ public class ArtistService {
 
     public ArtistServiceResponse getArtist(ArtistServiceRequest artistServiceRequest){
         return toServiceResponse(artistRepository.findById(artistServiceRequest.getArtistId())
-                .orElse(artistRepository.save(toServiceResponse(artistIntegration.
-                        getArtist(toServiceRequest(artistServiceRequest))))));
+                        .orElseGet(() -> artistRepository.save(toServiceResponse(artistIntegration
+                                .getArtist(toServiceRequest(artistServiceRequest))))));
     }
 }
