@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.controller.artist.model.request;
+package br.com.restdemo.demo.configuration.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class ArtistControllerRequest {
-    private String artistId;
+public class ErrorObject {
+    private String message;
+    private String field;
+    private String parameter;
 }

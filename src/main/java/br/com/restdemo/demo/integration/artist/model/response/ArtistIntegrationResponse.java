@@ -1,6 +1,5 @@
 package br.com.restdemo.demo.integration.artist.model.response;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

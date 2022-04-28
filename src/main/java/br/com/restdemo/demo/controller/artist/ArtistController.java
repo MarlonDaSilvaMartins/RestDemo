@@ -1,12 +1,10 @@
 package br.com.restdemo.demo.controller.artist;
 
-import br.com.restdemo.demo.controller.artist.model.request.ArtistControllerRequest;
 import br.com.restdemo.demo.controller.artist.model.response.ArtistControllerResponse;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @AllArgsConstructor
 @RestController
@@ -14,8 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ArtistController {
     ArtistFacade artistFacade;
 
-    @GetMapping("/{artistId}")
-    public ArtistControllerResponse getArtist(@PathVariable ArtistControllerRequest artistId){
-        return artistFacade.getArtist(artistId);
+    @GetMapping("/{artist}")
+    public ArtistControllerResponse findArtist(@Valid @PathVariable String artist){
+        return artistFacade.findArtist(artist);
+    }
+
+    @DeleteMapping("/{artistId}")
+    public String deleteArtist(@Valid @PathVariable String artistId){
+        return artistFacade.deleteArtist(artistId);
     }
 }
