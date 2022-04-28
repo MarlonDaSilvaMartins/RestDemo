@@ -19,5 +19,4 @@ public class CustomDateFormat {
             builder.deserializers(new LocalDateTimeDeserializer(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         };
     }
-
 }

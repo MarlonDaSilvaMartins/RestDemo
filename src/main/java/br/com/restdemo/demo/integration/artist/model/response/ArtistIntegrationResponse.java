@@ -15,8 +15,8 @@ public class ArtistIntegrationResponse {
     private String link;
     private String share;
     private String picture;
-    private Integer nb_album;
-    private Integer nb_fan;
+    private Integer nbAlbum;
+    private Integer nbFan;
     private String tracklist;
     private String type;
 }
