@@ -6,3 +6,5 @@ Sprint4 =
 
 
     http://localhost:8080/swagger-ui/index.html
+
+    https://medium.com/cwi-software/testando-seu-c%C3%B3digo-java-com-o-mockito-framework-8bea7287460a
