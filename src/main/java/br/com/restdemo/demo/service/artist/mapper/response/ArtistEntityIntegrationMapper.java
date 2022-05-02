@@ -15,8 +15,8 @@ public class ArtistEntityIntegrationMapper {
                 .link(artistIntegrationResponse.getLink())
                 .share(artistIntegrationResponse.getShare())
                 .picture(artistIntegrationResponse.getPicture())
-                .nb_album(artistIntegrationResponse.getNb_album())
-                .nb_fan(artistIntegrationResponse.getNb_fan())
+                .nbAlbum(artistIntegrationResponse.getNbAlbum())
+                .nbFan(artistIntegrationResponse.getNbFan())
                 .tracklist(artistIntegrationResponse.getTracklist())
                 .type(artistIntegrationResponse.getType())
                 .build();

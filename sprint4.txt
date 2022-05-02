@@ -1,5 +1,8 @@
 Sprint4 =
-    *[]Consumindo APIs Externa
+    *[x]Consumindo APIs Externa
     *[]Test unitarios com J-Unit 5
     *[]Criar testes automatizados para a API com banco em memória (Mongo Embedded)
-    *[]Criar documentação para a API com Swagger
+    *[x]Criar documentação para a API com Swagger
+
+
+    http://localhost:8080/swagger-ui/index.html

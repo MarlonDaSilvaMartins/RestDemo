@@ -31,9 +31,14 @@ public class ArtistService {
     }
 
     public String deleteArtist(String artistId) {
-        artistRepository.findById(artistId)
-                .ifPresent(artistEntity -> artistRepository.deleteById(artistId));
-        return artistId;
+        Optional<ArtistEntity> find = artistRepository.findById(artistId);
+        if(find.isPresent()){
+            artistRepository.deleteById(artistId);
+            return "Artist deleted";
+        }else{
+            throw new DataNotFoundException("id");
+        }
+//        artistRepository.findById(artistId).ifPresent(artistEntity -> artistRepository.deleteById(artistId));
     }
 
     private ArtistServiceResponse findArtistIntegration(String id) {
@@ -48,7 +53,7 @@ public class ArtistService {
     private Function<ArtistIntegrationResponse, ArtistIntegrationResponse> artistValidation() {
         return artist -> {
             if(ObjectUtils.isEmpty(artist.getName())){
-                throw new DataNotFoundException("artist not found");
+                throw new DataNotFoundException("id");
             }
             return artist;
         };

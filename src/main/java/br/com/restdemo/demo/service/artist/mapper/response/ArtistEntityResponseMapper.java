@@ -15,8 +15,8 @@ public class ArtistEntityResponseMapper {
                 .link(artistEntity.getLink())
                 .share(artistEntity.getShare())
                 .picture(artistEntity.getPicture())
-                .nb_album(artistEntity.getNb_album())
-                .nb_fan(artistEntity.getNb_fan())
+                .nbAlbum(artistEntity.getNbAlbum())
+                .nbFan(artistEntity.getNbFan())
                 .tracklist(artistEntity.getTracklist())
                 .type(artistEntity.getType())
                 .build();
