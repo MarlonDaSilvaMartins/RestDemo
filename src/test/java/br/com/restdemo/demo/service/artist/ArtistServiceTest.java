@@ -28,7 +28,7 @@ class ArtistServiceTest {
 //    ArtistIntegration artistIntegration;
 
     @Test
-    void whenFindArtistResturnArtist() {
+    void whenFindArtistReturnArtist() {
 
 //        ArtistIntegrationResponse artistIntegrationResponse = ArtistIntegrationResponse.builder()
 //                .name("Eminem")
