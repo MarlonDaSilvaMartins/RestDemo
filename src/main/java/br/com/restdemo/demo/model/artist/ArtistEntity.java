@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Builder
 @Data
-@Document
+@Document("Deezer")
 public class ArtistEntity {
     @Id
     private String id;
