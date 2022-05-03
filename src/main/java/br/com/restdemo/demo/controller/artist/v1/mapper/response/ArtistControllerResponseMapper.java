@@ -1,6 +1,6 @@
-package br.com.restdemo.demo.controller.artist.mapper.response;
+package br.com.restdemo.demo.controller.artist.v1.mapper.response;
 
-import br.com.restdemo.demo.controller.artist.model.response.ArtistControllerResponse;
+import br.com.restdemo.demo.controller.artist.v1.model.response.ArtistControllerResponse;
 import br.com.restdemo.demo.service.artist.model.response.ArtistServiceResponse;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

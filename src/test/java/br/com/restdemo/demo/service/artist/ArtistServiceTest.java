@@ -4,6 +4,7 @@ import br.com.restdemo.demo.integration.artist.ArtistIntegration;
 import br.com.restdemo.demo.integration.artist.model.response.ArtistIntegrationResponse;
 import br.com.restdemo.demo.model.artist.ArtistEntity;
 import br.com.restdemo.demo.repository.artist.ArtistRepository;
+import br.com.restdemo.demo.service.artist.mapper.response.ArtistEntityResponseMapper;
 import br.com.restdemo.demo.service.artist.model.response.ArtistServiceResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -71,8 +72,10 @@ class ArtistServiceTest {
         Mockito.when(artistRepository.findById("13"))
                 .thenReturn(Optional.ofNullable(artistEntity));
 
-        ArtistServiceResponse artistServiceResponse = artistService.findArtist("13");
+        ArtistServiceResponse artistServiceResponse = artistService.findArtistById("13")
+                .map(ArtistEntityResponseMapper::toArtistEntity).get();
         assertEquals(resultExpected, artistServiceResponse);
+        //TODO mockserver
     }
 
 

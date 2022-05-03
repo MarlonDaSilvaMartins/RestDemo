@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.controller.artist.model.response;
+package br.com.restdemo.demo.controller.artist.v1.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
