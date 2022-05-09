@@ -27,8 +27,8 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
-    testImplementation('org.mock-server:mockserver-netty:5.13.2')
+    testImplementation 'org.mock-server:mockserver-netty:5.13.2'
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
 }
 
