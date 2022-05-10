@@ -59,7 +59,7 @@ class ArtistIntegrationTest {
     }
 
     @Test
-    void shouldFindArtistAndReturnArtistIntegration() throws JsonProcessingException {
+    void whenFindArtistReturnArtistIntegration() throws JsonProcessingException {
         ArtistIntegrationResponse expect = artistIntegrationResponseExpect();
 
         HttpRequest request =  HttpRequest.request()

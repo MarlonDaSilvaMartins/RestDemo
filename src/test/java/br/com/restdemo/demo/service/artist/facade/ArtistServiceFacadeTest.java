@@ -24,7 +24,7 @@ class ArtistServiceFacadeTest {
     ArtistService artistService;
 
     @Test
-    void findArtistById() {
+    void whenFindArtistReturnArtistService() {
         var expected = artistServiceResponseExpectedStub();
         var findByIdResponse = artistEntityOptionalStub();
 
@@ -37,7 +37,7 @@ class ArtistServiceFacadeTest {
     }
 
     @Test
-    void findArtistByIntegration() {
+    void whenFindArtistByIntegrationReturnArtistService() {
         var expected = artistServiceResponseExpectedStub();
         var serviceResponse = artistServiceResponseStub();
 
@@ -67,7 +67,7 @@ class ArtistServiceFacadeTest {
 //    }//TODO eu preciso testar isso????
 
     @Test
-    void deleteArtist() {
+    void whenDeleteArtistReturnNothing() {
         Mockito.doNothing().when(artistService).deleteArtist("13");
 
         artistServiceFacade.deleteArtist("13");
