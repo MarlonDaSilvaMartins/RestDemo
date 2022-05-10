@@ -1,9 +1,7 @@
 package br.com.restdemo.demo.service.artist.facade;
 
-import br.com.restdemo.demo.configuration.exceptions.DataNotFoundException;
 import br.com.restdemo.demo.service.artist.ArtistService;
 import br.com.restdemo.demo.service.artist.ArtistServiceFacade;
-import br.com.restdemo.demo.service.artist.model.response.ArtistServiceResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -13,7 +11,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
 
 import static br.com.restdemo.demo.service.artist.facade.ArtistFacadeStub.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 @ExtendWith(MockitoExtension.class)
 @ContextConfiguration(classes = {ArtistServiceFacade.class, ArtistService.class})
@@ -65,7 +64,7 @@ class ArtistServiceFacadeTest {
 //        var actual = exception.getMessage();
 //
 //        assertEquals(actual, expected);
-//    }
+//    }//TODO eu preciso testar isso????
 
     @Test
     void deleteArtist() {
@@ -76,5 +75,5 @@ class ArtistServiceFacadeTest {
         var actual = Mockito.verify(this.artistService, Mockito.atMostOnce()).findArtistById("13");
 
         assertNull(actual);
-    }
+    }//TODO isso ta usando o embedded??
 }
