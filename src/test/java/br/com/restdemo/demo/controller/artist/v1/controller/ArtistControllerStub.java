@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.controller.artist.v1;
+package br.com.restdemo.demo.controller.artist.v1.controller;
 
 import br.com.restdemo.demo.controller.artist.v1.model.response.ArtistControllerResponse;
 

@@ -1,5 +1,7 @@
-package br.com.restdemo.demo.controller.artist.v1;
+package br.com.restdemo.demo.controller.artist.v1.controller;
 
+import br.com.restdemo.demo.controller.artist.v1.ArtistController;
+import br.com.restdemo.demo.controller.artist.v1.ArtistControllerFacade;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -10,8 +12,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static br.com.restdemo.demo.controller.artist.v1.ArtistControllerStub.artistControllerResponse;
-import static br.com.restdemo.demo.controller.artist.v1.ArtistControllerStub.artistControllerResponseExpect;
+import static br.com.restdemo.demo.controller.artist.v1.controller.ArtistControllerStub.artistControllerResponse;
+import static br.com.restdemo.demo.controller.artist.v1.controller.ArtistControllerStub.artistControllerResponseExpect;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
