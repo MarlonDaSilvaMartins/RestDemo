@@ -13,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.autoconfigure.data.mongo.AutoConfigureDataMongo;
 import org.springframework.test.context.ContextConfiguration;
 
 import java.util.Optional;
@@ -20,6 +21,7 @@ import java.util.Optional;
 import static br.com.restdemo.demo.service.artist.service.ArtistServiceStub.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@AutoConfigureDataMongo
 @ExtendWith(MockitoExtension.class)
 @ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class, ArtistIntegration.class})
 class ArtistServiceTest {
