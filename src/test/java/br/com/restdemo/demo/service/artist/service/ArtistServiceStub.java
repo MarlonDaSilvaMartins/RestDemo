@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.service.artist;
+package br.com.restdemo.demo.service.artist.service;
 
 import br.com.restdemo.demo.integration.artist.model.response.ArtistIntegrationResponse;
 import br.com.restdemo.demo.model.artist.ArtistEntity;
@@ -77,20 +77,6 @@ public class ArtistServiceStub {
                 .build();
     }
 
-    public static ArtistEntity artistEntityNotFoundStub(){
-        return ArtistEntity.builder()
-                .name(null)
-                .id(null)
-                .link(null)
-                .share(null)
-                .picture(null)
-                .nbAlbum(null)
-                .nbFan(null)
-                .tracklist(null)
-                .type(null)
-                .build();
-    }
-
     public static ArtistIntegrationResponse artistIntegrationNotFoundStub(){
         return ArtistIntegrationResponse.builder()
                 .name(null)
@@ -104,6 +90,4 @@ public class ArtistServiceStub {
                 .type(null)
                 .build();
     }
-
-
 }

@@ -1,10 +1,11 @@
-package br.com.restdemo.demo.service.artist;
+package br.com.restdemo.demo.service.artist.service;
 
 import br.com.restdemo.demo.configuration.exceptions.DataNotFoundException;
 import br.com.restdemo.demo.integration.artist.ArtistIntegration;
 import br.com.restdemo.demo.integration.artist.model.response.ArtistIntegrationResponse;
 import br.com.restdemo.demo.model.artist.ArtistEntity;
 import br.com.restdemo.demo.repository.artist.ArtistRepository;
+import br.com.restdemo.demo.service.artist.ArtistService;
 import br.com.restdemo.demo.service.artist.model.response.ArtistServiceResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,11 +17,11 @@ import org.springframework.test.context.ContextConfiguration;
 
 import java.util.Optional;
 
-import static br.com.restdemo.demo.service.artist.ArtistServiceStub.*;
+import static br.com.restdemo.demo.service.artist.service.ArtistServiceStub.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-@ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class})
+@ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class, ArtistIntegration.class})
 class ArtistServiceTest {
     
     @InjectMocks
@@ -34,11 +35,11 @@ class ArtistServiceTest {
 
     @Test
     void whenFindArtistByIdReturnOptionalOfArtistEntity() {
-        Optional<ArtistEntity> entityEntity = artistEntityOptionalStub();
+        Optional<ArtistEntity> entityResponse = artistEntityOptionalStub();
         Optional<ArtistEntity> entityExpected = artistOptionalExpectedStub();
 
-        Mockito.when(artistService.findArtistById("13"))
-                .thenReturn(entityEntity);
+        Mockito.when(artistRepository.findById("13"))
+                .thenReturn(entityResponse);
 
         var actual = artistService.findArtistById("13");
         assertEquals(entityExpected, actual);
