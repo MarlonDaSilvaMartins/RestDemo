@@ -87,7 +87,6 @@ class ArtistServiceTest {
         var actual = Mockito.verify(this.artistRepository, Mockito.atMostOnce()).findById("13");
 
         assertNull(actual);
-    }//TODO mongo Embedded
-
+    }//TODO isso ta usando o embedded??
     //TODO consumir outro endpoint para testar erro
 }

@@ -1,7 +1,7 @@
 Sprint4 =
     *[x]Consumindo APIs Externa
-    *[]Test unitarios com J-Unit 5
-    *[]Criar testes automatizados para a API com banco em memória (Mongo Embedded)
+    *[x]Test unitarios com J-Unit 5
+    *[x]Criar testes automatizados para a API com banco em memória (Mongo Embedded)
     *[x]Criar documentação para a API com Swagger
 
 

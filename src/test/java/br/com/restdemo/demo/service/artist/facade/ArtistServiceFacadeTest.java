@@ -64,7 +64,8 @@ class ArtistServiceFacadeTest {
 //        var actual = exception.getMessage();
 //
 //        assertEquals(actual, expected);
-//    }//TODO eu preciso testar isso????
+//    }
+//    TODO eu preciso testar isso????
 
     @Test
     void whenDeleteArtistReturnNothing() {
@@ -75,5 +76,5 @@ class ArtistServiceFacadeTest {
         var actual = Mockito.verify(this.artistService, Mockito.atMostOnce()).findArtistById("13");
 
         assertNull(actual);
-    }//TODO isso ta usando o embedded??
+    }
 }

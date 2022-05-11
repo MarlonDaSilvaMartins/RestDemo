@@ -51,5 +51,5 @@ class ArtistControllerTest {
         mvc.perform(MockMvcRequestBuilders
                         .delete("http://localhost:8080/v1/artist/13"))
                 .andExpect(status().isNoContent());
-    }//TODO isso aqui ta certo??
+    }
 }
