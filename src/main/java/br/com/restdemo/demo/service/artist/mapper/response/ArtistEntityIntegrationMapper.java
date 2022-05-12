@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArtistEntityIntegrationMapper {
-
     public static ArtistEntity toIntegrationResponse(ArtistIntegrationResponse artistIntegrationResponse) {
         return ArtistEntity.builder()
                 .id(artistIntegrationResponse.getId())
@@ -21,5 +20,4 @@ public class ArtistEntityIntegrationMapper {
                 .type(artistIntegrationResponse.getType())
                 .build();
     }
-
 }

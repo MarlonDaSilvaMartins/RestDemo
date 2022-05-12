@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.integration.track.model.response;
+package br.com.restdemo.demo.controller.track.v1.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class TrackIntegrationResponse {
+public class TrackControllerResponse {
     private String id;
     private String type;
     private String title;

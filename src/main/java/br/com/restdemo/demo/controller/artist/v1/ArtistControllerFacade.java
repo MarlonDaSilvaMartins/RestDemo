@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 @Component
 @AllArgsConstructor
 public class ArtistControllerFacade {
-    ArtistServiceFacade artistServiceFacade;
+    private final ArtistServiceFacade artistServiceFacade;
 
     public ArtistControllerResponse findArtist(String artist){
         return Stream.of(artistServiceFacade.findArtist(artist))
