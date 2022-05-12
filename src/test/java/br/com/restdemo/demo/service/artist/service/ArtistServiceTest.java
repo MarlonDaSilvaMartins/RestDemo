@@ -1,6 +1,6 @@
 package br.com.restdemo.demo.service.artist.service;
 
-import br.com.restdemo.demo.configuration.exceptions.DataNotFoundException;
+import br.com.restdemo.demo.configuration.exceptions.datanotfound.DataNotFoundException;
 import br.com.restdemo.demo.integration.artist.ArtistIntegration;
 import br.com.restdemo.demo.integration.artist.model.response.ArtistIntegrationResponse;
 import br.com.restdemo.demo.model.artist.ArtistEntity;
@@ -68,8 +68,8 @@ class ArtistServiceTest {
         Mockito.when(artistIntegration.findArtist("13r")).thenReturn(integrationResponse);
 
 
-        Exception exception = assertThrows(
-                DataNotFoundException.class, () -> artistService.findArtistIntegration("13r"));
+        Exception exception = assertThrows(DataNotFoundException.class,
+                () -> artistService.findArtistIntegration("13r"));
 
         var expected = "id";
 
@@ -88,5 +88,4 @@ class ArtistServiceTest {
 
         assertNull(actual);
     }//TODO isso ta usando o embedded??
-    //TODO consumir outro endpoint para testar erro
 }

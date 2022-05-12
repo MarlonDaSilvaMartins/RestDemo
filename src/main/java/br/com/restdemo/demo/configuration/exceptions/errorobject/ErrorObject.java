@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.configuration.exceptions;
+package br.com.restdemo.demo.configuration.exceptions.errorobject;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

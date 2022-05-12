@@ -1,4 +1,4 @@
-package br.com.restdemo.demo.configuration.exceptions;
+package br.com.restdemo.demo.configuration.exceptions.errorobject;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

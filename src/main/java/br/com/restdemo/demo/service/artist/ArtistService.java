@@ -1,6 +1,6 @@
 package br.com.restdemo.demo.service.artist;
 
-import br.com.restdemo.demo.configuration.exceptions.DataNotFoundException;
+import br.com.restdemo.demo.configuration.exceptions.datanotfound.DataNotFoundException;
 import br.com.restdemo.demo.integration.artist.ArtistIntegration;
 import br.com.restdemo.demo.integration.artist.model.response.ArtistIntegrationResponse;
 import br.com.restdemo.demo.model.artist.ArtistEntity;

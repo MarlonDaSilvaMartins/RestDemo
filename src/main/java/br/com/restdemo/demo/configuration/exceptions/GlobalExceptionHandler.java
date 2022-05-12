@@ -1,5 +1,12 @@
 package br.com.restdemo.demo.configuration.exceptions;
 
+import br.com.restdemo.demo.configuration.exceptions.datanotfound.DataNotFoundException;
+import br.com.restdemo.demo.configuration.exceptions.errorobject.ErrorObject;
+import br.com.restdemo.demo.configuration.exceptions.errorobject.ErrorResponse;
+import br.com.restdemo.demo.configuration.exceptions.trackhandler.TrackErrorDetail;
+import br.com.restdemo.demo.configuration.exceptions.trackhandler.TrackErrorException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -8,11 +15,38 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
+import static org.springframework.http.HttpStatus.*;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(BAD_REQUEST)
+    public ErrorResponse handleMethodArgumentNotValidException(MethodArgumentNotValidException exception){
+        return ErrorResponse.builder()
+                .timestamp(LocalDateTime.now())
+                .error(exception.getBindingResult().getFieldErrors().stream()
+                        .map((FieldError fieldError) -> ErrorObject.builder()
+                                .message(fieldError.getDefaultMessage())
+                                .field(fieldError.getField())
+                                .parameter(exception.getClass().getSimpleName())
+                                .build()).toList())
+                .build();
+    }
+
+    @ExceptionHandler(TrackErrorException.class)
+    @ResponseStatus(UNPROCESSABLE_ENTITY)
+    public ErrorResponse handleTrackErrorException(TrackErrorException exception){
+        return ErrorResponse.builder()
+                .timestamp(LocalDateTime.now())
+                .error(exception.getTrackErrorResponse().getDetail().stream()
+                        .map((TrackErrorDetail trackErrorDetail) -> ErrorObject.builder()
+                                .message(trackErrorDetail.getMsg())
+                                .field(trackErrorDetail.getLoc().get(1))
+                                .parameter(trackErrorDetail.getType())
+                                .build()).toList())
+                .build();
+    }
 
     @ExceptionHandler(DataNotFoundException.class)
     @ResponseStatus(BAD_REQUEST)
@@ -22,7 +56,7 @@ public class GlobalExceptionHandler {
                 .error(List.of(ErrorObject.builder()
                         .message("Artist not found")
                         .field(exception.getMessage())
-                        .parameter(exception.getClass().getName())
+                        .parameter(exception.getClass().getSimpleName())
                         .build()))
                 .build();
     }
@@ -35,7 +69,7 @@ public class GlobalExceptionHandler {
                 .error(List.of(ErrorObject.builder()
                         .message(BAD_REQUEST.name())
                         .field(exception.getMessage())
-                        .parameter(exception.getClass().getName())
+                        .parameter(exception.getClass().getSimpleName())
                         .build()))
                 .build();
     }
@@ -48,7 +82,7 @@ public class GlobalExceptionHandler {
                 .error(List.of(ErrorObject.builder()
                         .message(INTERNAL_SERVER_ERROR.name())
                         .field(exception.getMessage())
-                        .parameter(exception.getClass().getName())
+                        .parameter(exception.getClass().getSimpleName())
                         .build()))
                 .build();
     }

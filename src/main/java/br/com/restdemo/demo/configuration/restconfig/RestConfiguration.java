@@ -13,7 +13,6 @@ public class RestConfiguration {
                 .rootUri("https://deezerdevs-deezer.p.rapidapi.com")
                 .defaultHeader("X-RapidAPI-Host","deezerdevs-deezer.p.rapidapi.com")
                 .defaultHeader("X-RapidAPI-Key","cbe4664fbamsh6ce4d0f7ffe04c9p1ba2cbjsn1f328399f35b")
-//                .errorHandler()
                 .build();
     }
 }

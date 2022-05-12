@@ -1,6 +1,6 @@
 package br.com.restdemo.demo.controller.artist.v1;
 
-import br.com.restdemo.demo.configuration.exceptions.DataNotFoundException;
+import br.com.restdemo.demo.configuration.exceptions.datanotfound.DataNotFoundException;
 import br.com.restdemo.demo.controller.artist.v1.mapper.response.ArtistControllerResponseMapper;
 import br.com.restdemo.demo.controller.artist.v1.model.response.ArtistControllerResponse;
 import br.com.restdemo.demo.service.artist.ArtistServiceFacade;
