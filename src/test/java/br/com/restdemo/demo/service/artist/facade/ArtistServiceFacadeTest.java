@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
 import static br.com.restdemo.demo.service.artist.facade.ArtistFacadeStub.*;
@@ -48,24 +49,6 @@ class ArtistServiceFacadeTest {
         assertEquals(expected, actual);
 
     }
-
-//    @Test
-//    void whenNotFindArtistIntegrationReturnBadRequest() {
-//        ArtistServiceResponse artistServiceResponse = artistServiceNotFoundStub();
-//
-//        Mockito.when(artistService.findArtistIntegration("13r")).thenReturn(artistServiceResponse);
-//
-//
-//        Exception exception = assertThrows(
-//                DataNotFoundException.class, () -> artistServiceFacade.findArtist("13r"));
-//
-//        var expected = "id";
-//
-//        var actual = exception.getMessage();
-//
-//        assertEquals(actual, expected);
-//    }
-//    TODO eu preciso testar isso????
 
     @Test
     void whenDeleteArtistReturnNothing() {

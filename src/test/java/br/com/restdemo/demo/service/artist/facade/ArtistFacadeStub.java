@@ -1,6 +1,5 @@
 package br.com.restdemo.demo.service.artist.facade;
 
-import br.com.restdemo.demo.integration.artist.model.response.ArtistIntegrationResponse;
 import br.com.restdemo.demo.model.artist.ArtistEntity;
 import br.com.restdemo.demo.service.artist.model.response.ArtistServiceResponse;
 
